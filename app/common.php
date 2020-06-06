@@ -22,6 +22,6 @@ function post_json_data($url,$data_string){
     curl_exec($ch);
     $return_content = ob_get_contents();
     ob_end_clean();
-    $return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    return json(['code'=>$return_code, 'result'=>$return_content]);
+//    $return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    return $return_content;
 }
