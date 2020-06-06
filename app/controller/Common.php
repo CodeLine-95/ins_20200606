@@ -6,6 +6,7 @@ class Common extends BaseController
 {
     /**
      * url地址解析数据
+     * @return \think\response\Json
      */
     public function search_url(){
         try{
@@ -25,6 +26,11 @@ class Common extends BaseController
         }
     }
 
+    /**
+     * 实时采集url地址数据
+     * @param $url
+     * @return array
+     */
     private static function url_crawler($url){
         $request_url = 'http://18.163.175.242:8033/api/crawler';
         $params['url'] = $url;
